@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>beyouth.supply</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+    body { background-color: #111; color: #fff; }
+
+    #welcome {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeOut 1s ease-in-out 3s forwards;
+      z-index: 999;
+    }
+    #welcome img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    #welcome h1 {
+      font-size: 22px;
+      color: #888888;
+      animation: blink 1s infinite alternate;
+    }
+    @keyframes blink {
+      from { opacity: 1; } to { opacity: 0.6; }
+    }
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    header {
+      text-align: center;
+      margin-top: 40px;
+    }
+    header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    header h1 {
+      font-size: 28px;
+      color: #888888;
+      margin: 10px 0 5px;
+    }
+    header p {
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 16px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #00ffcc; }
+    nav a.active-link { color: #1E90FF; }
+
+    section { display: none; padding: 20px; }
+    section.active { display: block; }
+
+    .product {
+      display: flex;
+      background: #1a1a1a;
+      margin: 15px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px #0005;
+      animation: fadeIn 0.5s ease;
+    }
+    .product img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+    }
+    .product .info {
+      padding: 15px;
+    }
+    .info h3 {
+      margin-bottom: 5px;
+      color: #888888;
+      font-size: 12px;
+    }
+    .info p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .page-nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .page-nav a {
+      color: #00ffcc;
+      margin: 0 8px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="welcome">
+    <img src="48DC5452-9D10-4F9D-896C-04E3F4F2F0BA.png" alt="Logo Toko">
+    <h1>@beyouth.supply</h1>
+  </div>
+
+  <header>
+    <img src="48DC5452-9D10-4F9D-896C-04E3F4F2F0BA.png" alt="Foto Profil">
+    <h1>beyouth.supply</h1>
+    <p>jual beli chmb, rucas, uprise & brand lokal lainnya</p>
+  </header>
+
+  <nav>
+    <a onclick="show('chmb', this)">CHMB</a>
+    <a onclick="show('rucas', this)">RUCAS</a>
+    <a onclick="show('uprise', this)">UPRISE</a>
+    <a onclick="show('sosmed', this)">SOSIAL MEDIA</a>
+  </nav>
+
+  <!-- CHMB -->
+  <section id="chmb" class="active">
+    <div class="product"><img src="E75C0067-A4EE-4690-91DF-D2D7C5298CB0.jpeg"><div class="info"><h3>CHMB BEDSTAR</h3><p>Harga beli: Rp.620.000</p><p>Harga jual: Rp.880.000</p><p>Keuntungan: Rp.260.000</p></div></div>
+    <div class="product"><img src="C81C9B95-DBBD-4840-A304-43C94A285E35.jpeg"><div class="info"><h3>CHMB BASIC</h3><p>Harga beli: Rp.380.000</p><p>Harga jual: Rp.580.000</p><p>Keuntungan: Rp.200.000</p></div></div>
+    <div class="product"><img src="5C54A0D3-F814-4C24-B3BB-5635763EF246.jpeg"><div class="info"><h3>CHMB MASKING TAPE</h3><p>Harga beli: Rp.700.000</p><p>Harga jual: Rp.980.000</p><p>Keuntungan: Rp.280.000</p></div></div>
+    <div class="product"><img src="BAA4420E-E48A-4433-B058-E701BAAC7055.jpeg"><div class="info"><h3>CHMB NO IDEA</h3><p>Harga beli: Rp.350.000</p><p>Harga jual: Rp.580.000</p><p>Keuntungan: Rp.230.000</p></div></div>
+    <div class="product"><img src="F9896282-112C-46FA-B305-59CC9A814ABC.jpeg"><div class="info"><h3>CHMB SHOOTING LOVE</h3><p>Harga beli: Rp.600.000</p><p>Harga jual: Rp.880.000</p><p>Keuntungan: Rp.280.000</p></div></div>
+  </section>
+
+  <!-- RUCAS -->
+  <section id="rucas">
+    <div id="rucas-pages"></div>
+    <div class="page-nav">
+      <a onclick="loadRucas(1)">1</a>
+      <a onclick="loadRucas(2)">2</a>
+      <a onclick="loadRucas(3)">3</a>
+    </div>
+  </section>
+
+  <!-- UPRISE -->
+  <section id="uprise">
+    <div class="product"><img src="DC9BFA60-A4EB-4CC9-ABE8-F47AE5C0013B.jpeg"><div class="info"><h3>UPRISE CROCO</h3><p>Harga beli: Rp.150.000</p><p>Harga jual: Rp.400.000</p><p>Keuntungan: Rp.250.000</p></div></div>
+    <div class="product"><img src="A39F093B-1C75-4500-B203-EAA2BA0E233C.jpeg"><div class="info"><h3>UPRISE DIAMOND SPIKE</h3><p>Harga beli: Rp.160.000</p><p>Harga jual: Rp.410.000</p><p>Keuntungan: Rp.250.000</p></div></div>
+    <div class="product"><img src="FE133C46-6C44-4338-A831-2BED77636F43.jpeg"><div class="info"><h3>UPRISE AZUL DIAMOND</h3><p>Harga beli: Rp.170.000</p><p>Harga jual: Rp.420.000</p><p>Keuntungan: Rp.250.000</p></div></div>
+    <div class="product"><img src="0F64434F-3EAB-490F-BE0E-7F3906BFC399.jpeg"><div class="info"><h3>UPRISE AZUL</h3><p>Harga beli: Rp.180.000</p><p>Harga jual: Rp.430.000</p><p>Keuntungan: Rp.250.000</p></div></div>
+    <div class="product"><img src="C695F367-DE4B-4BA8-ADAC-05B5D7B55557.jpeg"><div class="info"><h3>UPRISE BLACK PANTHER</h3><p>Harga beli: Rp.190.000</p><p>Harga jual: Rp.440.000</p><p>Keuntungan: Rp.250.000</p></div></div>
+    <div class="product"><img src="F2DC62E9-E7CA-4152-BB75-00ADC19998F7.jpeg"><div class="info"><h3>UPRISE LEGEND</h3><p>Harga beli: Rp.200.000</p><p>Harga jual: Rp.450.000</p><p>Keuntungan: Rp.250.000</p></div></div>
+    <div class="product"><img src="FA1C6C96-BAF6-42E4-9761-70EBAC8D1344.jpeg"><div class="info"><h3>UPRISE COBRA</h3><p>Harga beli: Rp.210.000</p><p>Harga jual: Rp.460.000</p><p>Keuntungan: Rp.250.000</p></div></div>
+  </section>
+
+  <!-- SOSMED -->
+  <section id="sosmed">
+    <div class="product">
+      <img src="EF052E64-803F-4627-9764-9B6A60295313.jpeg" style="border-radius: 50%; width: 80px; height: 80px;">
+      <div class="info"><h3><a href="https://wa.me/6283153528067" target="_blank" style="color:#fff;">WhatsApp</a></h3></div>
+    </div>
+    <div class="product">
+      <img src="B130EC57-E4F8-4790-B02E-BD8B6AFB9F44.jpeg" style="border-radius: 50%; width: 80px; height: 80px;">
+      <div class="info"><h3><a href="https://www.instagram.com/beyouthh.supply" target="_blank" style="color:#fff;">Instagram</a></h3></div>
+    </div>
+    <div class="product">
+      <img src="7317C131-65E4-4380-8F4D-E75BEC256887.jpeg" style="border-radius: 50%; width: 80px; height: 80px;">
+      <div class="info"><h3><a href="https://www.tiktok.com/@el.supplyy" target="_blank" style="color:#fff;">TikTok</a></h3></div>
+    </div>
+    <div class="product">
+      <img src="FD0B00B8-B1FA-4D9B-A9BB-F9EEE3B6D619.jpeg" style="border-radius: 50%; width: 80px; height: 80px;">
+      <div class="info"><h3><a href="https://shopee.co.id" target="_blank" style="color:#fff;">Shopee</a></h3></div>
+    </div>
+  </section>
+
+  <script>
+    function show(id, el) {
+      document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+      document.querySelectorAll("nav a").forEach(a => a.classList.remove("active-link"));
+      el.classList.add("active-link");
+      if (id === 'rucas') loadRucas(1);
+    }
+
+    function formatRupiah(num) {
+      return "Rp." + num.toLocaleString("id-ID");
+    }
+
+    const rucasData = {
+      1: [
+        {name:"RUCAS S8 LONG V1", img:"A876D983-9E7B-44DC-9F7F-4F4B963CEF16.jpeg", buy:650000, sell:980000},
+        {name:"RUCAS S8 LONG V2", img:"8D87DC0C-8503-4DA0-B4CC-AB59CD704292.jpeg", buy:300000, sell:450000},
+        {name:"RUCAS S9 LONG V1", img:"93D0EC61-0EAE-4B83-B5F2-7A3E347474D6.jpeg", buy:650000, sell:870000},
+        {name:"RUCAS S11 LONG", img:"0D420319-DE2A-486E-AE38-3647A7CF40F0.jpeg", buy:300000, sell:489000},
+        {name:"RUCAS S14 LONG", img:"3875CBEC-9FF4-4B5F-AC13-BC5CFEED0C67.jpeg", buy:250000, sell:400000},
+        {name:"RUCAS HERITAGE", img:"D0D0D7DF-EC57-41B0-B0BC-22BF136A41F2.jpeg", buy:320000, sell:480000},
+        {name:"RUCAS S9 LONG V2", img:"E5B19ABA-6D5B-4D40-9BEC-1C06075FA1AA.jpeg", buy:280000, sell:445000}
+      ],
+      2: [
+        {name:"RUCAS S8 SHORT", img:"FC186BCC-59BA-417C-BBB8-11050DF191E0.jpeg", buy:380000, sell:560000},
+        {name:"RUCAS S9 SHORT", img:"9E2DD49A-B263-440B-9553-88E7085F062E.jpeg", buy:300000, sell:440000},
+        {name:"RUCAS S10 SHORT", img:"272DE219-DD0A-485C-BB72-4E3D335866F4.jpeg", buy:290000, sell:430000}
+      ],
+      3: [
+        {name:"RUCAS ZIPPER ULTRA STICH", img:"7B62FF04-C194-4971-A851-6F11AFB11FF1.jpeg", buy:500000, sell:650000},
+        {name:"RUCAS HOODIE BIMO V1", img:"4F0A0E13-FF1B-4EFF-8B29-B1AF86D333DE.jpeg", buy:400000, sell:540000},
+        {name:"RUCAS HOODIE BIMO V2", img:"E2275DC2-2983-4158-B367-2E9AE82D65CC.jpeg", buy:400000, sell:530000}
+      ]
+    };
+
+    function loadRucas(page) {
+      const container = document.getElementById("rucas-pages");
+      container.innerHTML = "";
+      rucasData[page].forEach(p => {
+        container.innerHTML += `
+        <div class="product">
+          <img src="${p.img}" alt="${p.name}">
+          <div class="info">
+            <h3>${p.name}</h3>
+            <p>Harga Beli: ${formatRupiah(p.buy)}</p>
+            <p>Harga Jual: ${formatRupiah(p.sell)}</p>
+            <p>Keuntungan: ${formatRupiah(p.sell - p.buy)}</p>
+          </div>
+        </div>`;
+      });
+    }
+
+    window.onload = () => {
+      loadRucas(1);
+      document.querySelectorAll("nav a")[0].classList.add("active-link");
+    };
+  </script>
+</body>
+</html>
